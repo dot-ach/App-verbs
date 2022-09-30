@@ -1,0 +1,1 @@
+We have colums with the tense verbs and rows with the verbs, in each row you have one verb, in base to this one you can complete the other inputs, if you have the row correct you can pass to another verbs, but if instead you have minimum one input incorrect you have to do it again.

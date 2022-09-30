@@ -1,0 +1,31 @@
+*{
+  padding: 0;
+  border: 0;
+  margin: 0;
+}
+html{
+  font-size: 62.5%;
+  font-family: Helvetica, sans-serif;
+}
+input{
+  border: 1px solid black;
+}
+main{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  justify-content: center;
+}
+/* .grid-test{
+  width: 100px;
+  height: 100px;
+  display: grid;
+  grid-template-columns: repeat(5, 100px);
+  grid-template-rows: repeat(5, 40px);
+  /* background-color: red; 
+} */
+.grid-test{
+  display: flex;
+}
