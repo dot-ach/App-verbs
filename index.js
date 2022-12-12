@@ -77,7 +77,17 @@ regularVerbs.forEach((item, counter) => {
 
 button.addEventListener('click', (event) => {
   // alert("Funciona pa");
-  console.log(event)
+  const inputs = document.querySelectorAll('input');
+  inputs.forEach(item => {
+    if (item.value === item.id){
+      console.log(`correcto - ${item.value}`);
+      item.className = 'correctValue'
+    }else{
+      console.log(`incorrecto - ${item.value}`);
+      item.className = 'incorrectValue'
+    }
+  })
+  // console.log(inputs)
   
 })
 
