@@ -1,99 +1,71 @@
-
-// Creating container and inputs
+// Creating container and button:
+// //Container 
 const container = document.querySelector('.container');
-
+// //Button
 const button = document.querySelector('.btn__main');
 
-const inputsAdding = () => {
-  const inputInfinitive = document.createElement('input');
-  inputInfinitive.placeholder = 'Infinitive';
-
-  const inputPast = document.createElement('input');
-  inputPast.placeholder = 'Past';
-
-  const inputPastParticiple = document.createElement('input');
-  inputPastParticiple.placeholder = 'Past Participle';
-
-  const inputGeround = document.createElement('input');
-  inputGeround.placeholder = 'Geround';
-
-  const inputSpanish = document.createElement('input');
-  inputSpanish.placeholder = 'Spanish';
-
-  container.append(inputInfinitive, inputPast, inputPastParticiple, inputGeround, inputSpanish);
-
-}
-
+// Function to create a random number based on a max-min number
 const randomNumber = (max, min) => {
   const result = Math.floor((Math.random() * (max - min + 1)) + min);
   return result;
 };
 
-
-console.log(randomNumber(6, 1));
-
+// Function to create and render inputs with placeholder, id and value based on verbs arrays
 regularVerbs.forEach((item, counter) => {
-  // console.log(counter)
-  
+
   const tenseNumber = randomNumber(5, 1);
-  
+
   const inputInfinitive = document.createElement('input');
   inputInfinitive.placeholder = 'Infinitive';
   inputInfinitive.id = item.infinitive;
-  if(tenseNumber === 1){
+  if (tenseNumber === 1) {
     inputInfinitive.value = item.infinitive;
   }
-  
+
   const inputPast = document.createElement('input');
   inputPast.placeholder = 'Past';
   inputPast.id = item.past;
-  if(tenseNumber === 2){
+  if (tenseNumber === 2) {
     inputPast.value = item.past;
   }
-  
+
   const inputPastParticiple = document.createElement('input');
   inputPastParticiple.placeholder = 'Past Participle';
   inputPastParticiple.id = item.pastParticiple;
-  if(tenseNumber === 3){
+  if (tenseNumber === 3) {
     inputPastParticiple.value = item.pastParticiple;
   }
-  
+
   const inputGeround = document.createElement('input');
   inputGeround.placeholder = 'Geround';
   inputGeround.id = item.geround;
-  if(tenseNumber === 4){
+  if (tenseNumber === 4) {
     inputGeround.value = item.geround;
   }
-  
+
   const inputSpanish = document.createElement('input');
   inputSpanish.placeholder = 'Spanish';
   inputSpanish.id = item.spanish;
-  if(tenseNumber === 5){
+  if (tenseNumber === 5) {
     inputSpanish.value = item.spanish;
   }
 
   container.append(inputInfinitive, inputPast, inputPastParticiple, inputGeround, inputSpanish);
 });
 
+// Event to validate if the input value is the same as the verb which is the input id
 button.addEventListener('click', (event) => {
-  // alert("Funciona pa");
   const inputs = document.querySelectorAll('input');
+  
   inputs.forEach(item => {
-    if (item.value === item.id){
+    if (item.value === item.id) {
       console.log(`correcto - ${item.value}`);
       item.className = 'correctValue'
-    }else{
+    } else {
       console.log(`incorrecto - ${item.value}`);
       item.className = 'incorrectValue'
     }
   })
-  // console.log(inputs)
-  
 })
-
-// for (let index = 0; index < 4; index++) {
-//   inputsAdding();
-//   console.log(index);
-// }
 
 

@@ -1,5 +1,7 @@
+// Array de base para poner los verbos
 const emptyObject = {infinitive: '', trdPerson: '', past: '', pastParticiple: '', geround: '', spanish: ''}
 
+// Array de verbos regulares
 const regularVerbs = [
   {infinitive: 'open', trdPerson: 'opens', past: 'opened', pastParticiple: 'opened', geround: 'opening', spanish: 'abrir'},
   {infinitive: 'accept', trdPerson: 'accepts', past: 'accepted', pastParticiple: 'accepted', geround: 'accepting', spanish: 'aceptar'},
@@ -13,6 +15,7 @@ const regularVerbs = [
   {infinitive: 'change', trdPerson: '', past: 'changes', pastParticiple: 'changed', geround: 'changing', spanish: 'cambiar'},
 ]
 
+// Array de verbos irregulares
 const irregularVerbs = [
   {infinitive: 'sweep', trdPerson: 'sweeps', past: 'swept', pastParticiple: 'swept', geround: 'sweeping', spanish: 'barrer'},
   {infinitive: 'drink', trdPerson: 'drinks', past: 'drank', pastParticiple: 'drunk', geround: 'drinking', spanish: 'beber'},
