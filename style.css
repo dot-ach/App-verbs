@@ -8,7 +8,9 @@ html {
   font-size: 62.5%;
   font-family: 'Inconsolata', monospace;
 }
-
+.quit{
+  display: none;
+}
 input {
   border: 1px solid black;
   height: 30px;
@@ -37,7 +39,7 @@ main {
 
 .grid_elements__container {
   display: grid;
-  grid-template-columns: 200px 200px 200px 200px 200px;
+  grid-template-columns: 200px 200px 200px 200px 200px 200px;
   grid-auto-rows: 30px;
   gap: 10px;
   margin-bottom: 40px;

@@ -13,7 +13,7 @@ const randomNumber = (max, min) => {
 // Function to create and render inputs with placeholder, id and value based on verbs arrays
 regularVerbs.forEach((item, counter) => {
 
-  const tenseNumber = randomNumber(5, 1);
+  const tenseNumber = randomNumber(6, 1);
 
   const inputInfinitive = document.createElement('input');
   inputInfinitive.placeholder = 'Infinitive';
@@ -22,50 +22,68 @@ regularVerbs.forEach((item, counter) => {
     inputInfinitive.value = item.infinitive;
   }
 
+  const inputTrdPerson = document.createElement('input');
+  inputTrdPerson.placeholder = 'Third Person';
+  inputTrdPerson.id = item.trdPerson;
+  if (tenseNumber === 2) {
+    inputTrdPerson.value = item.trdPerson;
+  }
+
   const inputPast = document.createElement('input');
   inputPast.placeholder = 'Past';
   inputPast.id = item.past;
-  if (tenseNumber === 2) {
+  if (tenseNumber === 3) {
     inputPast.value = item.past;
   }
 
   const inputPastParticiple = document.createElement('input');
   inputPastParticiple.placeholder = 'Past Participle';
   inputPastParticiple.id = item.pastParticiple;
-  if (tenseNumber === 3) {
+  if (tenseNumber === 4) {
     inputPastParticiple.value = item.pastParticiple;
   }
 
   const inputGeround = document.createElement('input');
   inputGeround.placeholder = 'Geround';
   inputGeround.id = item.geround;
-  if (tenseNumber === 4) {
+  if (tenseNumber === 5) {
     inputGeround.value = item.geround;
   }
 
   const inputSpanish = document.createElement('input');
   inputSpanish.placeholder = 'Spanish';
   inputSpanish.id = item.spanish;
-  if (tenseNumber === 5) {
+  if (tenseNumber === 6) {
     inputSpanish.value = item.spanish;
   }
 
-  container.append(inputInfinitive, inputPast, inputPastParticiple, inputGeround, inputSpanish);
+  container.append(inputInfinitive, inputTrdPerson, inputPast, inputPastParticiple, inputGeround, inputSpanish);
 });
 
 // Event to validate if the input value is the same as the verb which is the input id
+
+let incorrectVerbs = false;
+let buttonIsChecked = false;
+
 button.addEventListener('click', (event) => {
   const inputs = document.querySelectorAll('input');
-  
   inputs.forEach(item => {
     if (item.value === item.id) {
-      console.log(`correcto - ${item.value}`);
-      item.className = 'correctValue'
+      // console.log(`correcto - ${item.value}`);
+      item.className = 'correctValue';
     } else {
-      console.log(`incorrecto - ${item.value}`);
-      item.className = 'incorrectValue'
+      // console.log(`incorrecto - ${item.value}`);
+      item.value = item.id;
+      item.className = 'incorrectValue';
+      incorrectVerbs = true;
     }
   })
+  buttonIsChecked = true;
+  console.log(incorrectVerbs);
+  console.log(buttonIsChecked);
 })
 
+if (incorrectVerbs === false && buttonIsChecked === true){
+  button.className = 'quit';
+}
 

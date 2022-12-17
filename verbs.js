@@ -12,7 +12,7 @@ const regularVerbs = [
   {infinitive: 'help', trdPerson: 'helps', past: 'helped', pastParticiple: 'helped', geround: 'helping', spanish: 'ayudar'},
   {infinitive: 'dance', trdPerson: 'dances', past: 'danced', pastParticiple: 'danced', geround: 'dancing', spanish: 'bailar'},
   {infinitive: 'erase', trdPerson: 'erases', past: 'erased', pastParticiple: 'erased', geround: 'erasing', spanish: 'borrar'},
-  {infinitive: 'change', trdPerson: '', past: 'changes', pastParticiple: 'changed', geround: 'changing', spanish: 'cambiar'},
+  {infinitive: 'change', trdPerson: 'changes', past: 'changed', pastParticiple: 'changed', geround: 'changing', spanish: 'cambiar'},
 ]
 
 // Array de verbos irregulares
