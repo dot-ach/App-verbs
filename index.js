@@ -20,53 +20,51 @@ regularVerbs.forEach((item, counter) => {
   inputInfinitive.id = item.infinitive;
   if (tenseNumber === 1) {
     inputInfinitive.value = item.infinitive;
-  }
+  };
 
   const inputTrdPerson = document.createElement('input');
   inputTrdPerson.placeholder = 'Third Person';
   inputTrdPerson.id = item.trdPerson;
   if (tenseNumber === 2) {
     inputTrdPerson.value = item.trdPerson;
-  }
+  };
 
   const inputPast = document.createElement('input');
   inputPast.placeholder = 'Past';
   inputPast.id = item.past;
   if (tenseNumber === 3) {
     inputPast.value = item.past;
-  }
+  };
 
   const inputPastParticiple = document.createElement('input');
   inputPastParticiple.placeholder = 'Past Participle';
   inputPastParticiple.id = item.pastParticiple;
   if (tenseNumber === 4) {
     inputPastParticiple.value = item.pastParticiple;
-  }
+  };
 
   const inputGeround = document.createElement('input');
   inputGeround.placeholder = 'Geround';
   inputGeround.id = item.geround;
   if (tenseNumber === 5) {
     inputGeround.value = item.geround;
-  }
+  };
 
   const inputSpanish = document.createElement('input');
   inputSpanish.placeholder = 'Spanish';
   inputSpanish.id = item.spanish;
   if (tenseNumber === 6) {
     inputSpanish.value = item.spanish;
-  }
+  };
 
   container.append(inputInfinitive, inputTrdPerson, inputPast, inputPastParticiple, inputGeround, inputSpanish);
 });
 
 // Event to validate if the input value is the same as the verb which is the input id
 
-let incorrectVerbs = false;
-let buttonIsChecked = false;
-
 button.addEventListener('click', (event) => {
   const inputs = document.querySelectorAll('input');
+  const inputsArray = Object.entries(inputs);
   inputs.forEach(item => {
     if (item.value === item.id) {
       // console.log(`correcto - ${item.value}`);
@@ -75,15 +73,9 @@ button.addEventListener('click', (event) => {
       // console.log(`incorrecto - ${item.value}`);
       item.value = item.id;
       item.className = 'incorrectValue';
-      incorrectVerbs = true;
-    }
-  })
-  buttonIsChecked = true;
-  console.log(incorrectVerbs);
-  console.log(buttonIsChecked);
-})
+    };
+  console.log(inputsArray[0][1].className);
+  });
+});
 
-if (incorrectVerbs === false && buttonIsChecked === true){
-  button.className = 'quit';
-}
 
