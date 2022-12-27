@@ -93,5 +93,6 @@ button.addEventListener('click', (event) => {
   correctInputs = 60;
 
   console.log(event);
+  
 });
 
