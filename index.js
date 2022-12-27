@@ -61,6 +61,11 @@ regularVerbs.forEach((item, counter) => {
 });
 
 // Event to validate if the input value is the same as the verb which is the input id
+// //Initialize variable with all the imputs correct on default
+
+let correctInputs = 60;
+// //Varibale which we use to validate if we have to repeat the test if all the verbs are correct
+let repeatTest = false;
 
 button.addEventListener('click', (event) => {
   const inputs = document.querySelectorAll('input');
@@ -69,13 +74,24 @@ button.addEventListener('click', (event) => {
     if (item.value === item.id) {
       // console.log(`correcto - ${item.value}`);
       item.className = 'correctValue';
-    } else {
+      // correctInputs++;
+    }else {
       // console.log(`incorrecto - ${item.value}`);
       item.value = item.id;
       item.className = 'incorrectValue';
+      correctInputs--;
     };
-  console.log(inputsArray[0][1].className);
+    console.log(inputsArray[0][1].className);
   });
-});
 
+  if (correctInputs === 60) {
+    button.textContent = 'Again';
+    button.id = 'repeat';
+  }
+  console.log(button.id);
+
+  correctInputs = 60;
+
+  console.log(event);
+});
 
