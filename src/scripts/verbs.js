@@ -29,4 +29,4 @@ const irregularVerbs = [
   {infinitive: 'know', trdPerson: 'knows', past: 'knew', pastParticiple: 'known', geround: 'knowing', spanish: 'saber'},
 ]
 
-// export {regularVerbs, irregularVerbs};
+export {regularVerbs, irregularVerbs};
